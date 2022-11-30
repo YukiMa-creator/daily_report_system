@@ -40,7 +40,7 @@ public class EmployeeValidator {
 
         //パスワードのチェック
         String passError = validatePassword(ev.getPassword(), passwordCheckFlag);
-        if(passError.equals("")) {
+        if(!passError.equals("")) {
             errors.add(passError);
         }
 
@@ -65,10 +65,10 @@ public class EmployeeValidator {
         if(codeDuplicateCheckFlag) {
             //社員番号の重複チェックを実施
 
-            long employeesConst = isDuplicateEmployee(service, code);
+            long employeesCount = isDuplicateEmployee(service, code);
 
             //同一社員番号がすでに登録されている場合はエラーメッセージを返却
-            if(employeesConst > 0) {
+            if(employeesCount > 0) {
                 return MessageConst.E_EMP_CODE_EXIST.getMessage();
             }
         }
