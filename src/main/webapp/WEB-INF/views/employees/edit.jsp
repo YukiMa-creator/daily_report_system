@@ -15,7 +15,7 @@
         <h2>id : ${employee.id} の従業員情報 編集ページ</h2>
         <p>(パスワードは変更する場合のみ入力してください)</p>
         <form method="POST"
-            action="<c:url value='?action=${action}&command=&{commUpd}' />">
+            action="<c:url value='?action=${action}&command=${commUpd}' />">
             <c:import url="_form.jsp" />
         </form>
 
@@ -25,7 +25,8 @@
         <form method="POST"
             action="<c:url value='?action=${action}&command=${commDel}' />">
             <input type="hidden" name="${AttributeConst.EMP_ID.getValue()}"
-                value="${employee.id}" /> <input type="hidden"
+                value="${employee.id}" />
+                 <input type="hidden"
                 name="${AttributeConst.TOKEN.getValue()}" value="${_token}" />
         </form>
         <script>
