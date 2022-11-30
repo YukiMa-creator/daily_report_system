@@ -72,7 +72,7 @@ public class Employee {
      * 登録日時
      */
     @Column(name = JpaConst.EMP_COL_CREATED_AT, nullable = false)
-    private LocalDateTime createdAT;
+    private LocalDateTime createdAt;
 
     /**
      * 更新日時

@@ -45,9 +45,11 @@ public class EmployeeConverter {
      * @return EmployeeViewのインスタンス
      */
     public static EmployeeView toView(Employee e) {
-        if (e == null) {
+
+        if(e == null) {
             return null;
         }
+
         return new EmployeeView(
                 e.getId(),
                 e.getCode(),
@@ -58,7 +60,7 @@ public class EmployeeConverter {
                         : e.getAdminFlag() == JpaConst.ROLE_ADMIN
                                 ? AttributeConst.ROLE_ADMIN.getIntegerValue()
                                 : AttributeConst.ROLE_GENERAL.getIntegerValue(),
-                e.getCreatedAT(),
+                e.getCreatedAt(),
                 e.getUpdatedAt(),
                 e.getDeleteFlag() == null
                         ? null
@@ -93,7 +95,7 @@ public class EmployeeConverter {
         e.setName(ev.getName());
         e.setPassword(ev.getPassword());
         e.setAdminFlag(ev.getAdminFlag());
-        e.setCreatedAT(ev.getCreatedAt());
+        e.setCreatedAt(ev.getCreatedAt());
         e.setUpdatedAt(ev.getUpdatedAt());
         e.setDeleteFlag(ev.getDeleteFlag());
     }
