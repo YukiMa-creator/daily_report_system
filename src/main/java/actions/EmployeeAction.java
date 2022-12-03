@@ -86,7 +86,7 @@ public class EmployeeAction extends ActionBase {
         //新規登録画面を表示
         forward(ForwardConst.FW_EMP_NEW);
         }
-    }
+   }
 
     /**
      * 新規登録を行う
@@ -162,7 +162,7 @@ public class EmployeeAction extends ActionBase {
         //詳細画面を表示
         forward(ForwardConst.FW_EMP_SHOW);
         }
-    }
+   }
 
     /**
      * 編集画面を表示する
